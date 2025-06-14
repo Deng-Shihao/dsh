@@ -1,21 +1,130 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #131417;
+  background-image: linear-gradient(315deg, #131417 0%, #1e1f26 74%);
+  padding: 10px;
+  margin: 0; /* 移除默认边距 */
 }
-header {
-  text-align: center;
-}
-nav a {
-  margin: 0 10px;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  padding: 15px, 0;
   text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 可选：阴影效果 */
+  z-index: 1000; /* 确保导航栏在最上层 */
 }
-ul {
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start; /* 靠左对齐 */
+  align-items: center;
+  max-width: 1200px; /* 限制宽度（可选） */
+  margin: 0 auto;
+  padding: 0 20px; /* 左右内边距 */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* 链接间距 */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.article-list {
   list-style: none;
   padding: 0;
 }
-li {
-  margin-bottom: 30px;
+
+.article-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
 }
+
+.article-item:hover {
+  padding: 10px;
+  left: -25;
+}
+
+.article-list:nth-child(1)::after,
+.article-list:nth-child(1)::before {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.article-title {
+  color: #fff;
+  margin: 0 0 5px 0;
+}
+
+.article-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-title a:hover {
+  text-decoration: underline;
+}
+
+.article-meta {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.article-summary {
+  color: #fff;
+}
+
+span a {
+  color: blanchedalmond;
+  text-decoration: none;
+}
+
+span:hover a {
+  text-decoration: underline;
+}
+
+/* .article-list::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+} */
+
+/* .article-list::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  filter: blur(30px);
+  transition: 0.5s;
+} */

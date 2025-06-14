@@ -9,33 +9,50 @@
 
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>SH.DENG's Blog</title>
+    <title>SH.DENG's Blogs</title>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a href="">Blogs</a>
-        <a href="">Algorithm</a>
-        <a href="">Linux</a>
-        <a href="">Notes</a>
-        <a href="https://github.com/shDengg">Github</a>
-      </nav>
-    </header>
- 
-    <h2>Welcome!</h2>
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="">Blogs</a></li>
+          <li><a href="">Algorithm</a></li>
+          <li><a href="">Linux</a></li>
+          <li><a href="">Notes</a></li>
+          <li><a href="https://github.com/shDengg">Github</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <table border="1" cellspacing="0" cellpadding="5">
-      <tr><th>Title</th><th>Date</th></tr>
+    <!-- Articles List -->
+    <div class="content">
+      <!-- 在原有HTML的 <ul class="article-list"> 位置替换为： -->
+      <ul class="article-list" id="article-list"></ul>
 
-      <tr>
-        <td>
-          <a href="article/lvrv.html">left value & right value</a>
-        </td>
-        <td>2025-5-27</td>
-      </tr>
+      <script>
+        fetch("articles.json")
+          .then((response) => response.json())
+          .then((articles) => {
+            const list = document.getElementById("article-list");
 
-    </table>
-
-     </body>
+            articles.forEach((article) => {
+              list.innerHTML += `
+          <li class="article-item">
+            <h2 class="article-title">
+              <a href="${article.url}">${article.title}</a>
+            </h2>
+            <div class="article-meta">
+              <span>发布日期: ${article.date}</span> | 
+              <span>分类: <a href="${article.category_url}">${article.category}</a></span>
+            </div>
+            <p class="article-summary">${article.summary}</p>
+          </li>
+        `;
+            });
+          })
+          .catch((error) => console.error("加载文章失败:", error));
+      </script>
+    </div>
+  </body>
 </html>
