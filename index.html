@@ -1,58 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/post.js"></script>
-
+    <script src="js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-
-    <title>SH.DENG's Blogs</title>
-  </head>
-
-  <body>
+    <title>SH.DENG's Blog</title>
+</head>
+<body>
     <nav class="navbar">
-      <div class="nav-container">
-        <ul class="nav-links">
-          <li><a href="">Blogs</a></li>
-          <li><a href="">Algorithm</a></li>
-          <li><a href="">Linux</a></li>
-          <li><a href="">Notes</a></li>
-          <li><a href="https://github.com/shDengg">Github</a></li>
-        </ul>
-      </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Algorithms</a></li>
+                <li><a href="#">Linux</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="https://github.com/shDengg">GitHub</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Articles List -->
+    <!-- Article List -->
     <div class="content">
-      <!-- 在原有HTML的 <ul class="article-list"> 位置替换为： -->
-      <ul class="article-list" id="article-list"></ul>
-
-      <script>
-        fetch("articles.json")
-          .then((response) => response.json())
-          .then((articles) => {
-            const list = document.getElementById("article-list");
-
-            articles.forEach((article) => {
-              list.innerHTML += `
-          <li class="article-item">
-            <h2 class="article-title">
-              <a href="${article.url}">${article.title}</a>
-            </h2>
-            <div class="article-meta">
-              <span>发布日期: ${article.date}</span> | 
-              <span>分类: <a href="${article.category_url}">${article.category}</a></span>
-            </div>
-            <p class="article-summary">${article.summary}</p>
-          </li>
-        `;
-            });
-          })
-          .catch((error) => console.error("加载文章失败:", error));
-      </script>
+        <ul class="article-list" id="article-list"></ul>
+        <script>
+            fetch("articles.json")
+                .then(response => response.json())
+                .then(articles => {
+                    const list = document.getElementById("article-list");
+                    // const list = $("#article-list");
+                    articles.forEach(article => {
+                        list.innerHTML += `
+                            <li class="article-item">
+                                <h2 class="article-title">
+                                    <a href="${article.url}">${article.title}</a>
+                                </h2>
+                                <div class="article-meta">
+                                    <span>Published: ${article.date}</span> | 
+                                    <span>Category: <a href="${article.category_url}">${article.category}</a></span>
+                                </div>
+                                <p class="article-summary">${article.summary}</p>
+                            </li>
+                        `;
+                    });
+                })
+                .catch(error => console.error("Failed to load articles:", error));
+        </script>
     </div>
-  </body>
+</body>
 </html>
