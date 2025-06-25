@@ -1,51 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>SH.DENG's Blog</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Algorithms</a></li>
-                <li><a href="#">Linux</a></li>
-                <li><a href="#">Notes</a></li>
-                <li><a href="https://github.com/shDengg">GitHub</a></li>
-            </ul>
-        </div>
-    </nav>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Deng's Profile</title>
+  </head>
 
-    <!-- Article List -->
-    <div class="content">
-        <ul class="article-list" id="article-list"></ul>
-        <script>
-            fetch("articles.json")
-                .then(response => response.json())
-                .then(articles => {
-                    const list = document.getElementById("article-list");
-                    // const list = $("#article-list");
-                    articles.forEach(article => {
-                        list.innerHTML += `
-                            <li class="article-item">
-                                <h2 class="article-title">
-                                    <a href="${article.url}">${article.title}</a>
-                                </h2>
-                                <div class="article-meta">
-                                    <span>Published: ${article.date}</span> | 
-                                    <span>Category: <a href="${article.category_url}">${article.category}</a></span>
-                                </div>
-                                <p class="article-summary">${article.summary}</p>
-                            </li>
-                        `;
-                    });
-                })
-                .catch(error => console.error("Failed to load articles:", error));
-        </script>
+  <body>
+    <div class="nav-container">
+      <!-- <img src="img/openai-svgrepo-com.svg" alt="Open AI" class="logo" height="50px" width="50px"> -->
+      <div class="nav-item">
+        <ul class="item">
+          <!-- <li>
+            <a href="#">
+              <i class="ri-booklet-line"></i><span>Notes</span>
+            </a>
+          </li> -->
+
+          <li>
+            <a href="https://github.com/shDengg">
+              <i class="ri-github-line"></i><span>Github</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#"><i class="ri-emphasis-cn"></i><span>ZH</span></a>
+          </li>
+          <!-- <li>
+            <a href="#"><span>About</span></a>
+          </li> -->
+        </ul>
+      </div>
     </div>
-</body>
+
+    <div class="content-container">
+      <div class="content-header">
+        <h2>About Me</h2>
+      </div>
+      <div class="content-text">
+        <h3>Academic Background & Interests</h3>
+        <p>
+          I am currently pursuing a
+          <strong>Bachelor's degree in Computer Science</strong> at the
+          <em>University of Essex</em>, UK.
+        </p>
+        <br />
+
+        <p>
+          My interests span across
+          <span class="highlight">front-end development</span>,
+          <span class="highlight">user experience design</span>,
+          <span class="highlight">operating systems</span>, and
+          <span class="highlight">machine learning</span>.
+        </p>
+        <br />
+
+        <h3>Technical Proficiencies</h3>
+        <p>
+          I'm skilled in multiple programming languages including
+          <span class="highlight">JavaScript</span>,
+          <span class="highlight">Python</span>, and
+          <span class="highlight">C++</span>. Currently, I'm expanding my
+          knowledge in <span class="highlight">PyTorch</span> and
+          <span class="highlight">TensorFlow</span> frameworks, along with
+          <span class="highlight">CUDA programming</span>.
+        </p>
+        <br />
+
+        <h3>Development Philosophy</h3>
+        <p>
+          I'm passionate about exploring emerging technologies and implementing
+          <span class="highlight">innovative solutions</span> in projects. To
+          me, programming transcends mere code-writing — it's the
+          <span class="highlight">art of creative problem-solving</span> and
+          building impactful systems.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

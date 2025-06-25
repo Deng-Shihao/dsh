@@ -1,132 +1,79 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #F4E7D3;
-  /* background-color: #131417; */
-  /* background-image: linear-gradient(315deg, #131417 0%, #1e1f26 74%); */
-  padding: 10px;
-  margin: 0; /* 移除默认边距 */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geist", sans-serif;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px, 0;
+body {
+  /* min-width: 100vh; */
+  padding-top: 60px;
+  background-color: #f8f9fc;
+}
+
+.item a {
+  color: black;
+  font-size: 1.2em;
   text-decoration: none;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* 可选：阴影效果 */
-  z-index: 1000; /* 确保导航栏在最上层 */
+  transition: all 0.3s ease 0s;
+}
+
+.item a:hover {
+  color: #0088a9;
 }
 
 .nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: flex-start; /* 靠左对齐 */
   align-items: center;
-  /* max-width: 1200px;  */
-  background-color: black;
-  margin: 0 auto;
-  padding: 0px 20px; /* 左右内边距 */
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px; /* 链接间距 */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.article-list {
-  list-style: none;
-  padding: 0;
-}
-
-.article-item {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  border: solid;
+  justify-content: flex-start;
+  padding: 10px 5px;
   backdrop-filter: blur(10px);
-  box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.1);
-  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-.article-item:hover {
+.item li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.logo {
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
   padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.article-list:nth-child(1)::after,
-.article-list:nth-child(1)::before {
-  background: linear-gradient(315deg, #ffbc00, #ff0058);
+.content-container .content-header {
+  padding: 15px;
+  margin: 10px;
+  backdrop-filter: blur(10px); /* 背景模糊效果 */
+  -webkit-backdrop-filter: blur(10px); /* Safari 兼容 */
+  border-radius: 16px; /* 圆角 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 柔和边框 */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  color: #333; /* 文字颜色 */
+  font-weight: 500; /* 字体加粗 */
+  align-self: flex-start;
 }
 
-.article-title {
-  /* color: #fff; */
-  margin: 0 0 5px 0;
+.content-text {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
 }
-
-.article-title a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.article-title a:hover {
-  text-decoration: underline;
-}
-
-.article-meta {
-  /* color: #fff; */
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.article-summary {
-  /* color: #fff; */
-}
-
-span a {
-  /* color: blanchedalmond; */
-  text-decoration: none;
-}
-
-span:hover a {
-  text-decoration: underline;
-}
-
-/* .article-list::before {
-  content: "";
-  position: absolute;
-  background: #fff;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  text-decoration: none;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
-} */
-
-/* .article-list::after {
-  content: "";
-  position: absolute;
-  background: #fff;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  filter: blur(30px);
-  transition: 0.5s;
-} */
