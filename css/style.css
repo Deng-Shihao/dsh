@@ -8,8 +8,12 @@
 }
 
 body {
-  /* min-width: 100vh; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   padding-top: 60px;
+  width: 90%;
+  margin: auto;
   background-color: #f8f9fc;
 }
 
@@ -54,7 +58,7 @@ body {
   flex-direction: column;
   padding: 15px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 28px;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -62,14 +66,13 @@ body {
 .content-container .content-header {
   padding: 15px;
   margin: 10px;
-  backdrop-filter: blur(10px); /* 背景模糊效果 */
-  -webkit-backdrop-filter: blur(10px); /* Safari 兼容 */
-  border-radius: 16px; /* 圆角 */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* 柔和边框 */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
-  color: #333; /* 文字颜色 */
-  font-weight: 500; /* 字体加粗 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
   align-self: flex-start;
+  text-decoration: underline;
 }
 
 .content-text {
