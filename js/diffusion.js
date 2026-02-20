@@ -1,8 +1,11 @@
 // Stable Diffusion style text generation animation
 (function () {
   const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-  const chineseChars = "的一是不了在人有我他这个们中来上大为和国地到以说时要就出会可也你对生能而子那得于着下自之年过发后作里如家多成回去然学";
+    "▇";
+  const chineseChars = "▇";
+
+  // const chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+  // const chineseChars = "的一是不了在人有我他这个们中来上大为和国地到以说时要就出会可也你对生能而子那得于着下自之年过发后作里如家多成回去然学";
 
   function isChineseChar(char) {
     return /[\u4e00-\u9fa5]/.test(char);
